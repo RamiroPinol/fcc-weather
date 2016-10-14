@@ -1,0 +1,5 @@
+{"coord":{"lon":-58.13,"lat":-32.33},"weather":[{"id":801,"main":"Clouds","description":"few clouds"
+,"icon":"02n"}],"base":"cmc stations","main":{"temp":285.157,"pressure":1030.6,"humidity":86,"temp_min"
+:285.157,"temp_max":285.157,"sea_level":1033.78,"grnd_level":1030.6},"wind":{"speed":1.36,"deg":131.003
+},"clouds":{"all":20},"rain":{"3h":25},"dt":1464215619,"sys":{"message":0.0084,"country":"UY","sunrise":1464172931,"sunset"
+:1464209812},"id":3440684,"name":"San Felix","cod":200}
