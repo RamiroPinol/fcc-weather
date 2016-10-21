@@ -2,7 +2,8 @@ $(document).ready(function() {
 	var link = "";
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			link = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&APPID=edc5b16dc0d6c74d9dcf127345773105";
+			//link = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&APPID=edc5b16dc0d6c74d9dcf127345773105";
+			link = "weather.json";
 
 			$.getJSON(link, function( data ) {
 
@@ -23,6 +24,7 @@ $(document).ready(function() {
         			$("#temp").html(tempCelcius + "º");
 
         			//Initialize Switch
+        			/*
         			$("[id='tempSwitch']").bootstrapSwitch();
 
         			$('input[id="tempSwitch"]').on('switchChange.bootstrapSwitch', function(event, state) {
@@ -31,8 +33,9 @@ $(document).ready(function() {
             		} else {
                			$("#temp").html(tempFahren + "º");
             		}
+
 				});
-				
+				*/
 
 				$("#descrip").html(data.weather[0].main);
 				$("#pressure").html(data.main.pressure + " hPa");
