@@ -29,20 +29,17 @@ $(document).ready(function() {
 				var tempCelcius = Math.floor(data.main.temp - 273);
         var tempFahren = Math.floor((1.8 * tempCelcius) + 32);
         
+        // Show temperature in Celcius (default)
         $("#temp").html(tempCelcius + "º");
 
-  			//Initialize Switch
-  			/*
-  			$("[id='tempSwitch']").bootstrapSwitch();
-
-  			$('input[id="tempSwitch"]').on('switchChange.bootstrapSwitch', function(event, state) {
-    			if(state){
-         			$("#temp").html(tempCelcius + "º");
-      		} else {
-         			$("#temp").html(tempFahren + "º");
-      		}
+        // Temp switch: shows temp in unit selected
+        $('input:radio[name=scale]').change(function() {
+				  if (this.value == 'farenheit') {
+				    $("#temp").html(tempFahren + "º");
+				  } else if (this.value == "centigrades") {
+				  	$("#temp").html(tempCelcius + "º");
+				  }
 				});
-				*/
 
 				// Add values to every info div
 				$("#descrip").html(data.weather[0].description);
@@ -73,10 +70,9 @@ $(document).ready(function() {
 				if (data.weather[0].main == "Clouds") {
 					$("html body").animate({backgroundColor: "red"}, 500);
 				};
-				
-
 			});
 	
 		});
 	};
+
 });

@@ -83,16 +83,18 @@
 </div>
 
 <div id="switchDiv">
-	<p>Show temperature in: </p>
-	<form>
-		<div class="switchScale">
-		  <input type="radio" class="switch-input" name="scale" value="centigrades" id="gradC" checked>
-		  <label for="selC" class="switch-label switch-label-off">Cº</label>
-		  <input type="radio" class="switch-input" name="scale" value="farenheit" id="gradF">
-		  <label for="selF" class="switch-label switch-label-on">Fº</label>
-		  <span class="switch-selection"></span>
-		</div>
-	</form>
+<p>Show temperature in: </p>
+  <div class="switchScale">
+    <form>
+      <input type="radio" class="switch-input" name="scale" value="centigrades" id="centigrades" checked>
+      <label for="centigrades" class="switch-label switch-label-off">Cº</label>
+
+      <input type="radio" class="switch-input" name="scale" value="farenheit" id="farenheit">
+      <label for="farenheit" class="switch-label switch-label-on"> Fº</label>
+      
+      <span class="switch-selection"></span>
+    </form>
+  </div>
 </div>
 
 </body>

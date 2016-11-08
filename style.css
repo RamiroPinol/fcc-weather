@@ -68,7 +68,7 @@ i {
   body {padding-top: 15px;}
 }
 
-/* Grade scale switch*/
+/* Grade scale switch */
 .switchScale {
   position: relative;
   height: 25px;
@@ -110,7 +110,7 @@ i {
   transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
 }
 .switch-input:checked + .switch-label-on ~ .switch-selection {
-  left: 100px;
+  left: 49px;
 }
 .switch-selection {
   position: absolute;
