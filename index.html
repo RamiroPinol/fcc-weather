@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons-wind.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
@@ -22,9 +23,7 @@
 
   <div class="main">
     <div id="temp">19°</div>
-    <div id="icon">
-      <i class="wi wi-owm-night-800"></i>
-    </div>
+    <div id="icon"></div>
     <div id="descrip">Cloudy</div>
     <div id="rainsnow"></div>
   </div>
@@ -91,7 +90,7 @@
 
       <input type="radio" class="switch-input" name="scale" value="farenheit" id="farenheit">
       <label for="farenheit" class="switch-label switch-label-on"> Fº</label>
-      
+
       <span class="switch-selection"></span>
     </form>
   </div>

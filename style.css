@@ -25,22 +25,15 @@ body {
 }
 #temp {
   font-size: 6em;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 #icon {
-  display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 #descrip {
   font-size: 1.5em;
-  display: inline-block;
-  position: relative;
-  bottom: 25px;
 }
-p {
-  margin: 5px;
-}
-i {
+.main i {
   font-size: 5em;
 }
 .cell i {
@@ -57,12 +50,17 @@ i {
 }
 .cell {
   display: table-cell;
+  vertical-align: middle;
   border: 1px solid black;
   height: 33%;
   width: 25%;
 }
-#value {
-  margin: 0;
+.cell p {
+  margin: 5px auto;
+}
+#switchDiv p {
+  margin-bottom: 0;
+  line-height: 50%;
 }
 @media only screen and (max-width: 768px) {
   body {padding-top: 15px;}

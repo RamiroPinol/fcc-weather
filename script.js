@@ -14,17 +14,10 @@ $(document).ready(function() {
 
 				$("#title").html("The current weather in " + data.name);
 				
-				/*
-				// Wheather icon from OpenWeatherMap
-				var iconpath = "http://openweathermap.org/img/w/"
-					+ data.weather[0].icon + ".png";
+				// Wheather icon
+				$("#icon").append($("<i class='wi wi-owm-" 
+					+ data.weather[0].id.toString() + "'></i>"));
 
-				$("#icon").attr({
-					src: iconpath,
-					alt: data.weather[0].description
-				});
-				*/
-				
 				// Temperature is in Kelvin, calculate to show in ºC and ºF
 				var tempCelcius = Math.floor(data.main.temp - 273);
         var tempFahren = Math.floor((1.8 * tempCelcius) + 32);
@@ -45,8 +38,11 @@ $(document).ready(function() {
 				$("#descrip").html(data.weather[0].description);
 				$("#pressure #value").html(data.main.pressure + " hPa");
 				$("#humid #value").html(data.main.humidity + "%");
-				$("#wind #value").html(data.wind.speed + "m/s  "
-					+ Math.floor(data.wind.deg) + "º");
+				$("#wind #value").html(data.wind.speed + "m/s  ");
+
+				// Wind direction icon
+				$("#wind").append($("<i class='wi wi-wind towards-" 
+					+ Math.floor(data.wind.deg).toString() + "-deg'></i>"));
 
 				$("#clouds #value").html(data.clouds.all + "%");
 				var sunrise = new Date(data.sys.sunrise * 1000);
@@ -64,7 +60,6 @@ $(document).ready(function() {
 					$("#rain_snow_title").html("SNOW 3H");
 					$("#rain_snow").html(snow);
 				}
-				
 				
 				//Cambiar background
 				if (data.weather[0].main == "Clouds") {
