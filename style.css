@@ -100,6 +100,52 @@ body {
   font-size: 2em;
 }
 
+/* Remove unnecessary borders */
+#humid,
+#pressure {
+  border-top: 0;
+}
+
+#sunrise,
+#sunset {
+  border-bottom: 0;
+}
+
+#pressure,
+#wind,
+#sunset {
+  border-right: 0;
+}
+
+/* Window test */
+.container {
+  border-radius: 0px;
+  border-width: 8px;
+  background: linear-gradient(to bottom, #2771d1 0%, #47b7c1 100%) fixed;
+}
+
+#win1 {
+  width: 456px;
+  height: 6px;
+  margin: auto;
+  background: black;
+}
+#win2 {
+  width: 480px;
+  height: 20px;
+  margin: auto;
+  background: black;
+}
+#humid, #clouds, #sunrise {
+  border-left: 8px solid black;
+}
+.cell {
+  border-width: 4px;
+}
+body {
+  background-image: url('wall-pattern.png');
+}
+
 
 
 /*------------------------------------*\
