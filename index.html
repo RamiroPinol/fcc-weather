@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Current Weather</title>
   <meta charset="utf-8">
@@ -12,89 +13,116 @@
   <script src="script.js"></script>
 </head>
 
+
 <body>
 
 <div class="block">
   <h1 id="title">The current weather in </h1>
 </div>
 
+
 <div class="block">
+
   <div class="container">
 
-  <div class="main">
-    <div id="temp">19°</div>
-    <div id="icon"></div>
-    <div id="descrip">Cloudy</div>
-    <div id="rainsnow"></div>
-  </div>
+    <div class="main">
+      <div id="temp"></div>
+      <div id="icon"></div>
+      <div id="descrip"></div>
+      <div id="rainsnow"></div>
+    </div>
 
-  <div class="info">
-    <div class="row">
-      <div class="cell" id="humid">
-      <strong>
-        <p id="text">Humidity</p>
-      </strong>
-        <p id="value"></p>
-        <i class="wi wi-humidity"></i>
+
+    <div class="info">
+
+      <div class="row">
+
+        <div class="cell" id="humid">
+          <strong>
+            <p id="text">Humidity</p>
+          </strong>
+          <p id="value"></p>
+          <i class="wi wi-humidity"></i>
+        </div>
+
+        <div class="cell" id="pressure">
+          <strong>
+            <p id="text">Pressure</p>
+          </strong>
+          <p id="value">1030.6 hPa</p>
+          <i class="wi wi-barometer"></i>
+        </div>
+
       </div>
-      <div class="cell" id="pressure">
-      <strong>
-        <p id="text">Pressure</p>
-      </strong>
-        <p id="value">1030.6 hPa</p>
-        <i class="wi wi-barometer"></i>
+
+      <div class="row">
+
+        <div class="cell" id="clouds">
+          <strong>
+            <p id="text">Clouds</p>
+          </strong>
+          <p id="value"></p>
+          <i class="wi wi-cloud"></i>
+        </div>
+
+        <div class="cell" id="wind">
+          <strong>
+            <p id="text">Wind</p>
+          </strong>
+          <p id="value"></p>
+          <i class="wi wi-strong-wind"></i>
+        </div>
+
       </div>
-    </div>
-    <div class="row">
-      <div class="cell" id="clouds">
-      <strong>
-        <p id="text">Clouds</p>
-      </strong>
-        <p id="value"></p>
-        <i class="wi wi-cloud"></i>
+
+      <div class="row">
+
+        <div class="cell" id="sunrise">
+          <strong>
+            <p id="text">Sunrise</p>
+          </strong>
+          <p id="value"></p>
+          <i class="wi wi-sunrise"></i>
+        </div>
+
+        <div class="cell" id="sunset">
+          <strong>
+            <p id="text">Sunset</p>
+          </strong>
+          <p id="value"></p>    
+          <i class="wi wi-sunset"></i>    
+        </div>
+
       </div>
-      <div class="cell" id="wind">
-      <strong>
-        <p id="text">Wind</p>
-      </strong>
-        <p id="value"></p>
-        <i class="wi wi-strong-wind"></i>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell" id="sunrise">
-      <strong>
-        <p id="text">Sunrise</p>
-      </strong>
-        <p id="value"></p>
-        <i class="wi wi-sunrise"></i>
-      </div>
-      <div class="cell" id="sunset">
-      <strong>
-        <p id="text">Sunset</p>
-      </strong>
-        <p id="value"></p>    
-        <i class="wi wi-sunset"></i>    
-      </div>
+
     </div>
   </div>
-</div>
 </div>
 
 <div id="switchDiv">
-<p>Show temperature in: </p>
-  <div class="switchScale">
+
+  <p>Show temperature in: </p>
+
+  <div class="switch-scale">
+
     <form>
+
       <input type="radio" class="switch-input" name="scale" value="centigrades" id="centigrades" checked>
+
       <label for="centigrades" class="switch-label switch-label-off">Cº</label>
 
       <input type="radio" class="switch-input" name="scale" value="farenheit" id="farenheit">
+
       <label for="farenheit" class="switch-label switch-label-on"> Fº</label>
 
       <span class="switch-selection"></span>
+
     </form>
+
   </div>
+
 </div>
+
 
 </body>
 </html>
