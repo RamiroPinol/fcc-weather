@@ -47,12 +47,10 @@ h1 {
   background: -moz-linear-gradient( top, #0056b5 0%, #3b90e3 50%, #8fcef9 100% );
   background: -webkit-linear-gradient( top, #0056b5 0%, #3b90e3 50%, #8fcef9 100% );
   background: linear-gradient( to bottom, #0056b5 0%, #3b90e3 50%, #8fcef9 100% );
-  border-radius: 0px;
   border: 8px solid;
-  height: 300px;
+  height: 400px;
   margin: auto;
-  max-width: 440px;
-  width: 100%;
+  max-width: 540px;
 }
 
 /* Main div (left side) */
@@ -135,14 +133,14 @@ h1 {
   background: black;
   height: 6px;
   margin: auto;
-  width: 456px;
+  width: 560px;
 }
 #win2 {
   background: black;
   box-shadow: 0 10px 15px rgba( 0, 0, 0, 0.6 );
   height: 20px;
   margin: auto;
-  width: 480px;
+  width: 590px;
   
 }
 
@@ -244,12 +242,22 @@ h1 {
 /*------------------------------------*\
   #RESPONSIVE DECLARATIONS
 \*------------------------------------*/
-@media only screen and ( max-width: 480px ) {
-  #win1, #win2 { 
-    max-width: 440px;
-    width: 100%; }
-}
 
 @media only screen and ( max-width: 768px ) {
   body { padding-top: 15px; }
+  
+  #win1 { width: 496px; }
+  
+  #win2 { width: 530px; }
+  
+  .container {
+    height: 330px;
+    width: 480px;
+  }
+}
+
+@media only screen and ( max-width: 540px ) {
+  #win1, #win2 { width: 100%; }
+  
+  .container { width: 100%; }
 }
