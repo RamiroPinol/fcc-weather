@@ -1,124 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Current Weather</title>
-	<meta charset="utf-8">
+  <title>Current Weather</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
-  <link rel="stylesheet" href="http://www.bootstrap-switch.org/dist/css/bootstrap3/bootstrap-switch.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-aNUYGqSUL9wG/vP7+cWZ5QOM4gsQou3sBfWRr/8S3R1Lv0rysEmnwsRKMbhiQX/O" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons-wind.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
 
 <body>
 
-  <div class="container_fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <div>
-          <h1 id="title" class="text-center">The current weather in </h1>
-        </div>
-      </div>
-    </div>
+<div class="block">
+  <h1 id="title">The current weather in </h1>
+</div>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="main" class="text-center">
-          <span id="temp"></span>
-	      <img id="icon">
-	      <span id="descrip"></span>
-        </div>
-      </div>
-    </div>
+<div class="block">
+  <div class="container">
 
-    <div id="switch" class="text-center">
-    	<input id="tempSwitch" type="checkbox" data-label-text="Unit" data-on-text="Cº" data-off-text="Fº" data-size="mini" data-off-color = "warning">
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-4">
-	    <div class="table-responsive">
-		  <div class="tbl-header">
-		    <table cellpadding="0" cellspacing="0" border="0">
-		      <thead>
-		        <tr>
-		          <th>Pressure</th>
-		          <th>Humidity</th>
-		          <th>Wind</th>
-		        </tr>
-		      </thead>
-		    </table>
-		  </div>
-		</div>
-		<div class="tbl-content">
-		  <table cellpadding="0" cellspacing="0" border="0">
-		    <tbody>
-		      <tr>
-		        <td id="pressure"></td>
-		        <td id="humid"></td>
-		        <td id="wind"></td>
-		      </tr>
-		    </tbody>
-		  </table>
-		</div>
-		<div class="table-responsive">
-		  <div class="tbl-header">
-		    <table cellpadding="0" cellspacing="0" border="0">
-		      <thead>
-		        <tr>
-		          <th>Clouds</th>
-		          <th>Sunrise</th>
-		          <th>Sunset</th>
-		        </tr>
-		      </thead>
-		    </table>
-		  </div>
-		</div>
-		<div class="tbl-content">
-		  <table cellpadding="0" cellspacing="0" border="0">
-		    <tbody>
-		      <tr>
-		        <td id="clouds"></td>
-		        <td id="sunrise"></td>
-		        <td id="sunset"></td>
-		      </tr>
-		    </tbody>
-		  </table>
-		</div>
-	</div>
-
-	<div class="row">
-      <div class="col-xs-12 col-md-2 col-md-offset-5">
-        <div class="table-responsive">
-		  <div class="tbl-header">
-		    <table cellpadding="0" cellspacing="0" border="0">
-		      <thead>
-		        <tr>
-		          <th id="rain_snow_title"></th>
-		        </tr>
-		      </thead>
-		    </table>
-		  </div>
-		</div>
-		<div class="tbl-content">
-		  <table cellpadding="0" cellspacing="0" border="0">
-		    <tbody>
-		      <tr>
-		        <td id="rain_snow"></td>
-		      </tr>
-		    </tbody>
-		  </table>
-		</div>
-      </div>
-    </div>
-
+  <div class="main">
+    <div id="temp">19°</div>
+    <div id="icon"></div>
+    <div id="descrip">Cloudy</div>
+    <div id="rainsnow"></div>
   </div>
+
+  <div class="info">
+    <div class="row">
+      <div class="cell" id="humid">
+      <strong>
+        <p id="text">Humidity</p>
+      </strong>
+        <p id="value"></p>
+        <i class="wi wi-humidity"></i>
+      </div>
+      <div class="cell" id="pressure">
+      <strong>
+        <p id="text">Pressure</p>
+      </strong>
+        <p id="value">1030.6 hPa</p>
+        <i class="wi wi-barometer"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" id="clouds">
+      <strong>
+        <p id="text">Clouds</p>
+      </strong>
+        <p id="value"></p>
+        <i class="wi wi-cloud"></i>
+      </div>
+      <div class="cell" id="wind">
+      <strong>
+        <p id="text">Wind</p>
+      </strong>
+        <p id="value"></p>
+        <i class="wi wi-strong-wind"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" id="sunrise">
+      <strong>
+        <p id="text">Sunrise</p>
+      </strong>
+        <p id="value"></p>
+        <i class="wi wi-sunrise"></i>
+      </div>
+      <div class="cell" id="sunset">
+      <strong>
+        <p id="text">Sunset</p>
+      </strong>
+        <p id="value"></p>    
+        <i class="wi wi-sunset"></i>    
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="switchDiv">
+<p>Show temperature in: </p>
+  <div class="switchScale">
+    <form>
+      <input type="radio" class="switch-input" name="scale" value="centigrades" id="centigrades" checked>
+      <label for="centigrades" class="switch-label switch-label-off">Cº</label>
+
+      <input type="radio" class="switch-input" name="scale" value="farenheit" id="farenheit">
+      <label for="farenheit" class="switch-label switch-label-on"> Fº</label>
+
+      <span class="switch-selection"></span>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
-
-
