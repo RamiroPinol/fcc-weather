@@ -121,7 +121,10 @@ body {
 .container {
   border-radius: 0px;
   border-width: 8px;
-  background: linear-gradient(to bottom, #2771d1 0%, #47b7c1 100%) fixed;
+  background: #0056b5;
+  background: -moz-linear-gradient(top, #0056b5 0%, #3b90e3 50%, #8fcef9 100%);
+  background: -webkit-linear-gradient(top, #0056b5 0%, #3b90e3 50%, #8fcef9 100%);
+  background: linear-gradient(to bottom, #0056b5 0%, #3b90e3 50%, #8fcef9 100%);
 }
 
 #win1 {
@@ -146,6 +149,13 @@ body {
   background-image: url('wall-pattern.png');
 }
 
+/* window color */
+.container, .cell, #humid, #clouds, #sunrise {
+  border-color: #302010;
+}
+#win1, #win2 {
+  background-color: #302010;
+}
 
 
 /*------------------------------------*\

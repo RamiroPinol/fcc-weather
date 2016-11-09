@@ -4,10 +4,18 @@ $(document).ready(function() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 
+			/*
 			link = "http://api.openweathermap.org/data/2.5/weather?lat="
 				+ position.coords.latitude + "&lon="
 				+ position.coords.longitude
 				+ "&APPID=edc5b16dc0d6c74d9dcf127345773105";
+			*/
+
+			link = "http://api.openweathermap.org/data/2.5/weather?lat="
+				+ 64 + "&lon="
+				+ 22.5
+				+ "&APPID=edc5b16dc0d6c74d9dcf127345773105";
+
 			//link = "weather.json";
 
 			$.getJSON(link, function( data ) {
@@ -53,29 +61,84 @@ $(document).ready(function() {
 				// Check if it is day or night
 				let now = (Date.now() >= sunrise && Date.now() <= sunset) ? "day" : "night";
 
+				// Build weather condition ID
+				let id = now + "-" + data.weather[0].id.toString();
+
 				// Add day or night icon for current weather
-				$("#icon").append($("<i class='wi wi-owm-" + now + "-"
-					+ data.weather[0].id.toString() + "'></i>"));
+				$("#icon").append($("<i class='wi wi-owm-" + id + "'></i>"));
 
 
-				//Add rain or snow info if any:
+
+				// Add rain or snow info if any:
 				if (data.rain != undefined) {
+
 					var rain = data.rain["3h"] + " mm";
 					$("#rain_snow_title").html("RAIN 3H");
 					$("#rain_snow").html(rain);
+
 				} else if (data.snow != undefined) {
+
 					var snow = snow.rain["3h"] + " mm";
 					$("#rain_snow_title").html("SNOW 3H");
 					$("#rain_snow").html(snow);
 				}
 				
-				//Cambiar background
-				if (data.weather[0].main == "Clouds") {
-					$("html body").animate({backgroundColor: "red"}, 500);
+
+				// Return container background depending on weather
+				function background(id) {
+					// Clear day
+					if (id == "day-800") {
+						return "linear-gradient(to bottom, #0056b5 0%, #3b90e3 50%, #8fcef9 100%)";
+
+					// Clear night
+					} else if (id == "night-800") {
+						return "#000";
+
+					// Cloudy day
+					} else if (id.slice(0, -2) == "day-8") {
+						return "linear-gradient(to bottom, #768d96 0%, #cedce7 100%)";
+
+					// Cloudy night
+					} else if (id.slice(0, -2) == "night-8") {
+						return "linear-gradient(to bottom, #4f3d3d 0%,#2d2323 17%,#000000 58%)";
+
+					// Misty - Hazy day 
+					} else if (id.slice(0, -2) == "day-7") {
+						return "linear-gradient(to bottom, #a3adb2 0%,#a3aeb0 8%,#a1aaad 25%," 
+							+ "#a2a8ac 45%,#a1a8a8 50%,#9aa0a3 75%,#95979b 91%,#8e9295 100%)";
+
+					// Misty - Hazy night
+					} else if (id.slice(0, -2) == "night-7") {
+						return "background: linear-gradient(to bottom, #0e0e0e 0%,#383838 100%)";
+
+					// Rain - Drizzle - Snow day
+					} else if (id.slice(0, -2) == "day-3" || id.slice(0, -2) == "day-5"
+						|| id.slice(0, -2) == "day-6") {
+						return "linear-gradient(to bottom, #384349 0%,#828c95 64%,#b5bdc8 100%)";
+
+					// Rain - Drizzle - Snow night
+					} else if (id.slice(0, -2) == "night-3" || id.slice(0, -2) == "night-5"
+						|| id.slice(0, -2) == "night-6") {
+						return "linear-gradient(to bottom, #2b0d0d 0%,#1c0808 26%,#0e0e0e 58%)";
+
+					// Thunderstorm day
+					} else if (id.slice(0, -2) == "day-2") {
+						return "linear-gradient(to bottom, #2d3e47 0%,#828c95 64%,#a3adb2 100%)";
+
+					// Thunderstorm night
+					} else if (id.slice(0, -2) == "night-2") {
+						return "linear-gradient(to bottom, #745882 0%,#2c273a 24%,#0e0e0e 64%)";
+					}
 				};
+
+				let grad = background(id);
+
+				// Change container backgroud and text color depending on weather
+				$( ".container" ).css({ 
+					"background" : grad,  
+					"color" : (id.slice(0, 1) == "n") ? "white" : "black"});
+
 			});
-	
 		});
 	};
-
 });
