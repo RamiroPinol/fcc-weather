@@ -59,15 +59,12 @@ body {
 
 .main  #temp {
   font-size: 6em;
-  margin-top: 25px;
-}
-
-.main  #icon {
-  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 .main  #descrip {
   font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 /* Main icon size */
