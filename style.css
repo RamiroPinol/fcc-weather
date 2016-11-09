@@ -23,6 +23,7 @@
 * {
   box-sizing: border-box;
   font-family: arial;
+  font-family: 'Signika Negative', sans-serif;
   text-align: center;
 }
 
@@ -31,6 +32,10 @@ body {
   padding-top: 50px;
 }
 
+h1 {
+  font-size: 2.2em;
+  text-shadow: 1px 1px #fff;
+}
 
 
 /*------------------------------------*\
@@ -59,15 +64,12 @@ body {
 
 .main  #temp {
   font-size: 6em;
-  margin-top: 25px;
-}
-
-.main  #icon {
-  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 .main  #descrip {
   font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 /* Main icon size */
@@ -137,9 +139,11 @@ body {
 }
 #win2 {
   background: black;
+  box-shadow: 0 10px 15px rgba( 0, 0, 0, 0.6 );
   height: 20px;
   margin: auto;
   width: 480px;
+  
 }
 
 /* Window color */

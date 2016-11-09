@@ -12,11 +12,9 @@ $( document ).ready( function() {
 			// For test
 			/*
 			link = "http://api.openweathermap.org/data/2.5/weather?lat="
-				+ 64 + "&lon="
-				+ 22.5
+				+ 64 + "&lon=" + 22.5
 				+ "&APPID=edc5b16dc0d6c74d9dcf127345773105";
 			*/
-			//link = "weather.json";
 
 			$.getJSON( link, function( data ) {
 
@@ -70,19 +68,16 @@ $( document ).ready( function() {
 				$( "#icon" ).append( $( "<i class='wi wi-owm-" + id + "'></i>" ) );
 
 
-
 				// Add rain or snow info if any:
 				if ( data.rain != undefined ) {
 
-					var rain = data.rain["3h"] + " mm";
-					$( "#rain_snow_title" ).html( "RAIN 3H" );
-					$( "#rain_snow" ).html( rain );
+					var rain = data.rain["3h"] + "mm";
+					$( "#rainsnow" ).html( "Rain 3H: " + rain );
 
 				} else if ( data.snow != undefined ) {
 
-					var snow = snow.rain["3h"] + " mm";
-					$( "#rain_snow_title" ).html( "SNOW 3H" );
-					$( "#rain_snow" ).html( snow );
+					var snow = snow.rain["3h"] + "mm";
+					$( "#rainsnow" ).html( "Snow 3H: " + snow );
 				}
 				
 
@@ -129,7 +124,7 @@ $( document ).ready( function() {
 
 					// Thunderstorm night
 					} else if ( id.slice( 0, -2 ) == "night-2" ) {
-						return "linear-gradient( to bottom, #745882 0%,#2c273a 24%,#0e0e0e 64% )";
+						return "linear-gradient( to bottom, #4c3a56 0%,#2c273a 24%,#0e0e0e 64% )";
 					}
 				};
 
@@ -138,7 +133,7 @@ $( document ).ready( function() {
 				// Change container backgroud and text color depending on weather
 				$( ".container" ).css( { 
 					"background" : grad,  
-					"color" : ( id.slice( 0, 1 ) == "n" ) ? "white" : "black"} );
+					"color" : ( id.slice( 0, 1 ) == "n" ) ? "#ccc" : "#000"} );
 
 			});
 		});
