@@ -1,126 +1,189 @@
+/*
+ * CONTENTS:
+ *
+ * GLOBALS AND BODY
+ *
+ * APP CONTAINER
+ * Main div.........(Right side of container).
+ * Info div.........(Left side of container).
+ *
+ * TEMPERATURE UNIT SWITCH
+ *
+ * RESPONSIVE DECLARATIONS
+ */
+
+
+/*------------------------------------*\
+  #GLOBALS AND BODY
+\*------------------------------------*/
+
 * {
-  text-align: center;
-  font-family: arial;
   box-sizing: border-box;
+  font-family: arial;
+  text-align: center;
 }
+
 body {
-	padding-top: 50px;
   background: -webkit-linear-gradient(top, #2771d1 0%, #47b7c1 100%) fixed;
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #2771d1 0%, #47b7c1 100%) fixed;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  padding-top: 50px;
 }
+
+
+
+/*------------------------------------*\
+  #APP CONTAINER
+\*------------------------------------*/
+
 .container {
-  width: 100%;
-  max-width: 440px;
-  margin: auto;
-  height: 300px;
   border: 5px solid black;
   border-radius: 15px;
+  height: 300px;
+  margin: auto;
+  max-width: 440px;
+  width: 100%;
 }
+
+/* Main div (left side) */
 .main {
-  width: 50%;
-  height: 100%;
   float: left;
+  height: 100%;
+  width: 50%;
 }
-#temp {
+
+.main  #temp {
   font-size: 6em;
   margin-top: 25px;
 }
-#icon {
+
+.main  #icon {
   margin-bottom: 10px;
 }
-#descrip {
+
+.main  #descrip {
   font-size: 1.5em;
 }
+
+/* Main icon size */
 .main i {
   font-size: 5em;
 }
-.cell i {
-  font-size: 2em;
-}
+
+/* Complementary info div (rigth side) */
 .info {
-  width: 50%;
-  height: 100%;
-  display: table;
   border-collapse: collapse;
+  display: table;
+  height: 100%;
+  width: 50%;
 }
+
 .row {
   display: table-row;
 }
+
 .cell {
-  display: table-cell;
-  vertical-align: middle;
   border: 1px solid black;
+  display: table-cell;
   height: 33%;
+  vertical-align: middle;
   width: 25%;
 }
+
 .cell p {
   margin: 5px auto;
 }
-#switchDiv p {
-  margin-bottom: 0;
-  line-height: 50%;
-}
-@media only screen and (max-width: 768px) {
-  body {padding-top: 15px;}
+
+/* Info icons size */
+.cell i {
+  font-size: 2em;
 }
 
-/* Grade scale switch */
-.switchScale {
-  position: relative;
-  height: 25px;
-  width: 100px;
-  margin: 10px auto;
+
+
+/*------------------------------------*\
+  #TEMPERATURE UNIT SWITCH
+\*------------------------------------*/
+
+#switchDiv p {
+  line-height: 50%;
+  margin-bottom: 0;
+}
+
+
+.switch-scale {
   background: #c7ba9b;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-}
-.switch-label {
+  height: 25px;
+  margin: 10px auto;
   position: relative;
-  z-index: 2;
-  font-size: 14px;
-  float: left;
-  width: 49px;
-  line-height: 25px;
+  width: 100px;
+}
+
+.switch-label {
   color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+  line-height: 25px;
+  position: relative;
   text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
-  cursor: pointer;
+  width: 49px;
+  z-index: 2;
 }
+
 .switch-label:active {
   font-weight: bold;
   transition: font-weight 0.15s ease-in;
 }
+
 .switch-label-off {
   padding-left: 2px;
 }
+
 .switch-label-on {
   padding-right: 2px;
 }
+
 .switch-input {
   display: none;
 }
+
 .switch-input:checked + .switch-label {
-  font-weight: bold;
   color: rgba(0, 0, 0, 0.65);
+  font-weight: bold;
   text-shadow: 0 1px rgba(255, 255, 255, 0.25);
   transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
 }
+
 .switch-input:checked + .switch-label-on ~ .switch-selection {
   left: 49px;
 }
+
 .switch-selection {
-  position: absolute;
-  z-index: 1;
-  top: 2px;
-  left: 2px;
-  display: block;
-  width: 49px;
-  height: 21px;
+  background-color: #5c832f;
+  background-image: linear-gradient(#97b07a, #5c832f);
   border-radius: 3px;
-  background-color: #5C832F;
-  background-image: linear-gradient(#97b07a, #5C832F);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  display: block;
+  height: 21px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
   transition: left 0.15s ease-out;
+  width: 49px;
+  z-index: 1;
+}
+
+
+
+/*------------------------------------*\
+  #RESPONSIVE DECLARATIONS
+\*------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+  body {padding-top: 15px;}
 }
