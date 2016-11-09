@@ -16,8 +16,6 @@ $( document ).ready( function() {
 				+ "&APPID=edc5b16dc0d6c74d9dcf127345773105";
 			*/
 
-			link = "weatherfile.json";
-
 			$.getJSON( link, function( data ) {
 
 				$( "#title" ).html( "The current weather in " + data.name );
