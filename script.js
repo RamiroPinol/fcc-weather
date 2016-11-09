@@ -14,10 +14,6 @@ $(document).ready(function() {
 
 				$("#title").html("The current weather in " + data.name);
 				
-				// Wheather icon
-				$("#icon").append($("<i class='wi wi-owm-" 
-					+ data.weather[0].id.toString() + "'></i>"));
-
 				// Temperature is in Kelvin, calculate to show in ºC and ºF
 				var tempCelcius = Math.floor(data.main.temp - 273);
         var tempFahren = Math.floor((1.8 * tempCelcius) + 32);
@@ -35,7 +31,8 @@ $(document).ready(function() {
 				});
 
 				// Add values to every info div
-				$("#descrip").html(data.weather[0].description);
+				let desc = data.weather[0].description;
+				$("#descrip").html(desc[0].toUpperCase() + desc.slice(1));
 				$("#pressure #value").html(data.main.pressure + " hPa");
 				$("#humid #value").html(data.main.humidity + "%");
 				$("#wind #value").html(data.wind.speed + "m/s  ");
@@ -49,6 +46,17 @@ $(document).ready(function() {
 				var sunset = new Date(data.sys.sunset * 1000);
 				$("#sunrise #value").html(sunrise.toTimeString().slice(0,8) + " Hs");
 				$("#sunset #value").html(sunset.toTimeString().slice(0,8) + " Hs");
+				
+
+				// Wheather icon
+
+				// Check if it is day or night
+				let now = (Date.now() >= sunrise && Date.now() <= sunset) ? "day" : "night";
+
+				// Add day or night icon for current weather
+				$("#icon").append($("<i class='wi wi-owm-" + now + "-"
+					+ data.weather[0].id.toString() + "'></i>"));
+
 
 				//Add rain or snow info if any:
 				if (data.rain != undefined) {
