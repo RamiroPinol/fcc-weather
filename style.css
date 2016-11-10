@@ -47,12 +47,10 @@ h1 {
   background: -moz-linear-gradient( top, #0056b5 0%, #3b90e3 50%, #8fcef9 100% );
   background: -webkit-linear-gradient( top, #0056b5 0%, #3b90e3 50%, #8fcef9 100% );
   background: linear-gradient( to bottom, #0056b5 0%, #3b90e3 50%, #8fcef9 100% );
-  border-radius: 0px;
   border: 8px solid;
-  height: 300px;
+  height: 400px;
   margin: auto;
-  max-width: 440px;
-  width: 100%;
+  max-width: 540px;
 }
 
 /* Main div (left side) */
@@ -60,21 +58,22 @@ h1 {
   float: left;
   height: 100%;
   width: 50%;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .main  #temp {
-  font-size: 6em;
-  margin-top: 15px;
+  font-size: 7.5em;
 }
 
 .main  #descrip {
-  font-size: 1.5em;
-  margin-bottom: 15px;
+  font-size: 2.5em;
 }
 
 /* Main icon size */
 .main i {
-  font-size: 5em;
+  font-size: 7em;
+  display: block;
 }
 
 /* Complementary info div (rigth side) */
@@ -95,6 +94,7 @@ h1 {
   height: 33%;
   vertical-align: middle;
   width: 25%;
+  font-size: 1.25em;
 }
 
 .cell p {
@@ -108,7 +108,7 @@ h1 {
 
 /* Window's center border */
 #humid,
-#clouds,
+#visibility,
 #sunrise {
   border-left: 8px solid;
 }
@@ -135,14 +135,14 @@ h1 {
   background: black;
   height: 6px;
   margin: auto;
-  width: 456px;
+  width: 560px;
 }
 #win2 {
   background: black;
   box-shadow: 0 10px 15px rgba( 0, 0, 0, 0.6 );
   height: 20px;
   margin: auto;
-  width: 480px;
+  width: 590px;
   
 }
 
@@ -150,7 +150,7 @@ h1 {
 .container,
 .cell,
 #humid,
-#clouds,
+#visibility,
 #sunrise {
   border-color: #302010;
 }
@@ -239,17 +239,35 @@ h1 {
   z-index: 1;
 }
 
-
+ 
 
 /*------------------------------------*\
   #RESPONSIVE DECLARATIONS
 \*------------------------------------*/
-@media only screen and ( max-width: 480px ) {
-  #win1, #win2 { 
-    max-width: 440px;
-    width: 100%; }
-}
 
 @media only screen and ( max-width: 768px ) {
   body { padding-top: 15px; }
+  
+  .main  #temp { font-size: 6em; }
+
+  .main  #descrip { font-size: 1.5em; }
+
+  .main i { font-size: 5em; }
+  
+  .cell { font-size: 1em; }
+  
+  #win1 { width: 496px; }
+  
+  #win2 { width: 530px; }
+  
+  .container {
+    height: 330px;
+    width: 480px;
+  }
+}
+
+@media only screen and ( max-width: 540px ) {
+  #win1, #win2 { width: 100%; }
+  
+  .container { width: 100%; }
 }
