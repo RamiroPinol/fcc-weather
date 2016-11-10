@@ -58,21 +58,22 @@ h1 {
   float: left;
   height: 100%;
   width: 50%;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .main  #temp {
-  font-size: 6em;
-  margin-top: 15px;
+  font-size: 7.5em;
 }
 
 .main  #descrip {
-  font-size: 1.5em;
-  margin-bottom: 15px;
+  font-size: 2.5em;
 }
 
 /* Main icon size */
 .main i {
-  font-size: 5em;
+  font-size: 7em;
+  display: block;
 }
 
 /* Complementary info div (rigth side) */
@@ -93,6 +94,7 @@ h1 {
   height: 33%;
   vertical-align: middle;
   width: 25%;
+  font-size: 1.25em;
 }
 
 .cell p {
@@ -106,7 +108,7 @@ h1 {
 
 /* Window's center border */
 #humid,
-#clouds,
+#visibility,
 #sunrise {
   border-left: 8px solid;
 }
@@ -148,7 +150,7 @@ h1 {
 .container,
 .cell,
 #humid,
-#clouds,
+#visibility,
 #sunrise {
   border-color: #302010;
 }
@@ -237,7 +239,7 @@ h1 {
   z-index: 1;
 }
 
-
+ 
 
 /*------------------------------------*\
   #RESPONSIVE DECLARATIONS
@@ -245,6 +247,14 @@ h1 {
 
 @media only screen and ( max-width: 768px ) {
   body { padding-top: 15px; }
+  
+  .main  #temp { font-size: 6em; }
+
+  .main  #descrip { font-size: 1.5em; }
+
+  .main i { font-size: 5em; }
+  
+  .cell { font-size: 1em; }
   
   #win1 { width: 496px; }
   
